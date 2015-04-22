@@ -16,3 +16,29 @@
 # This file uses CoffeeScript Object Notation (CSON).
 # If you are unfamiliar with CSON, you can read more about it here:
 # https://github.com/bevry/cson#what-is-cson
+
+'*':
+  'Onsong Setup':
+    'prefix': 'onsong'
+    'body': 'Title: \nArtist: \nKey: []\nOriginal Key: \nCANT Key: \nBook: \n\n'
+
+  'Title':
+    'prefix': 't'
+    'body': 'Title: '
+
+  'Artist':
+    'prefix': 'a'
+    'body': 'Artist: '
+
+  'ellipsis':
+    'prefix': 'lips'
+    'body': '  width: 250px;\nwhite-space: nowrap;\noverflow: hidden;\ntext-overflow: ellipsis;\n'
+
+'.html .php .asp .scss .css':
+  'Font Smoothing':
+    'prefix': 'smooth'
+    'body': '-webkit-font-smoothing: antialiased;'
+
+  'Font Smoothing':
+    'prefix': 'smooth'
+    'body': '-webkit-font-smoothing: antialiased;'
