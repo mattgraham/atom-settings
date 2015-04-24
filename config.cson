@@ -6,4 +6,7 @@
   core: {}
   editor:
     invisibles: {}
-    fontSize: 17
+    fontSize: 18
+  emmet: {}
+  "travis-ci-status": {}
+  Zen: {}
