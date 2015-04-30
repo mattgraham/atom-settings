@@ -7,6 +7,9 @@
   editor:
     invisibles: {}
     fontSize: 18
+    showIndentGuide: true
+    showInvisibles: true
+    softWrap: true
   emmet: {}
   "travis-ci-status": {}
   Zen: {}
