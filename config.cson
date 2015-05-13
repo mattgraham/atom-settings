@@ -6,7 +6,7 @@
   core: {}
   editor:
     invisibles: {}
-    fontSize: 18
+    fontSize: 19
     showIndentGuide: true
     showInvisibles: true
     softWrap: true

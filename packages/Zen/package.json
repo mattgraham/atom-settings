@@ -1,7 +1,7 @@
 {
   "name": "Zen",
   "main": "./lib/zen",
-  "version": "0.12.1",
+  "version": "0.14.0",
   "private": true,
   "description": "Distraction free writing.",
   "activationCommands": {
@@ -25,22 +25,22 @@
     "zen",
     "distraction free"
   ],
-  "readme": "# Zen\n\nDistraction free writing for Atom.\n\nToggle with `cmd-ctrl-z` on OS X or by adding `shift` to your platform's\nfullscreen command:\n- `cmd-ctrl-shift-F` on OSX\n- `shift-F11` on Windows and Linux.\n\nSettings:\n- Width\n- Keep the current tab visible\n- Keep the [word count](https://atom.io/packages/wordcount) visible*\n\n\\* *0.12.1 - this features causes a render issue and is temporarily disabled until we find a solution*\n\nNote that settings are not available until the package has been activated, due to [a shortcoming in core](https://github.com/atom/settings-view/issues/356).\n\n## Before:\n\n![](https://f.cloud.github.com/assets/2/2290454/c7304340-a01d-11e3-8b89-018775a8612b.png)\n\n## After:\n\n![](https://f.cloud.github.com/assets/2/2290455/ce99e97e-a01d-11e3-8808-ebec40e959b4.png)\n",
+  "readme": "# Zen\n\nDistraction free writing for Atom.\n\nToggle with `cmd-ctrl-z` on OS X or by adding `shift` to your platform's\nfullscreen command:\n- `cmd-ctrl-shift-F` on OSX\n- `shift-F11` on Windows and Linux.\n\nSettings:\n- Width\n- Tabs can all be hidden, or all except the active tab\n- Optional soft wrap\n- Keep the [word count](https://atom.io/packages/wordcount) visible\n\nNote that settings are not available until the package has been activated, due to [a shortcoming in core](https://github.com/atom/settings-view/issues/356).\n\n## Before:\n\n![](https://f.cloud.github.com/assets/2/2290454/c7304340-a01d-11e3-8b89-018775a8612b.png)\n\n## After:\n\n![](https://f.cloud.github.com/assets/2/2290455/ce99e97e-a01d-11e3-8808-ebec40e959b4.png)\n",
   "readmeFilename": "README.md",
   "bugs": {
     "url": "https://github.com/defunkt/zen/issues"
   },
   "homepage": "https://github.com/defunkt/zen",
-  "_id": "Zen@0.12.1",
-  "_shasum": "50d253c87efed4efe6ed8acb3e508b54e3677849",
-  "_resolved": "file:../d-115324-16186-12s00v6/package.tgz",
-  "_from": "../d-115324-16186-12s00v6/package.tgz",
+  "_id": "Zen@0.14.0",
+  "_shasum": "35451f27d05dd02d94f91da65d2565037abac071",
+  "_resolved": "file:../d-115411-14198-t16cb1/package.tgz",
+  "_from": "../d-115411-14198-t16cb1/package.tgz",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
       {
         "name": "jquery",
-        "version": "2.1.3",
+        "version": "2.1.4",
         "path": "node_modules/jquery/dist/jquery.js"
       }
     ],
@@ -54,8 +54,6 @@
         "package.json"
       ],
       ".js": [
-        "node_modules/jquery/dist/cdn/jquery-2.1.3.js",
-        "node_modules/jquery/dist/cdn/jquery-2.1.3.min.js",
         "node_modules/jquery/dist/jquery.js",
         "node_modules/jquery/dist/jquery.min.js",
         "node_modules/jquery/src/ajax/jsonp.js",

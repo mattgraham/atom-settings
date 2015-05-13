@@ -7,14 +7,19 @@ module.exports =
     fullscreen:
       type: 'boolean'
       default: true
-    hideTabs:
-      description: 'Disable to keep the current tab visible when Zen.'
-      type: 'boolean'
-      default: true
+    tabs:
+      description: 'Determines the tab style used while Zen is active.'
+      type: 'string'
+      default: 'hidden'
+      enum: ['hidden', 'single', 'multiple']
     showWordCount:
       description: 'Show the word-count if you have the package installed.'
       type: 'boolean'
       default: false
+    softWrap:
+      description: 'Enables / Disables soft wrapping when Zen is active.'
+      type: 'boolean'
+      default: atom.config.get 'editor.softWrap'
     width:
       type: 'integer'
       default: atom.config.get 'editor.preferredLineLength'
@@ -30,34 +35,35 @@ module.exports =
     # should really check current fullsceen state
     fullscreen = atom.config.get 'Zen.fullscreen'
     width = atom.config.get 'Zen.width'
-
-    if editor is undefined # e.g. settings-view
-      atom.notifications.addInfo 'Zen cannot be achieved in this view.'
-      return
-
-    if atom.config.get 'Zen.hideTabs'
-      body.setAttribute 'data-zen-tabs', 'hidden'
-    else
-      body.setAttribute 'data-zen-tabs', 'visible'
-
-    if atom.config.get 'Zen.showWordCount'
-      body.setAttribute 'data-zen-word-count', 'visible'
-    else
-      body.setAttribute 'data-zen-word-count', 'hidden'
+    softWrap = atom.config.get 'Zen.softWrap'
 
     if body.getAttribute('data-zen') isnt 'true'
+
+      # Prevent zen mode for undefined editors
+      if editor is undefined # e.g. settings-view
+        atom.notifications.addInfo 'Zen cannot be achieved in this view.'
+        return
+
+      if atom.config.get 'Zen.tabs'
+        body.setAttribute 'data-zen-tabs', atom.config.get 'Zen.tabs'
+
+      if atom.config.get 'Zen.showWordCount'
+        body.setAttribute 'data-zen-word-count', 'visible'
+      else
+        body.setAttribute 'data-zen-word-count', 'hidden'
+
       # Enter Mode
       body.setAttribute 'data-zen', 'true'
 
       # Soft Wrap
-      # set it so it's true for all new editors you open in zen
-      if atom.config.get('editor.softWrap') is false
-        atom.config.set('editor.softWrap', true)
-        # remember to put it back later
+      # Use zen soft wrapping setting's to override the default settings
+      if atom.config.get('editor.softWrap') isnt softWrap
+        atom.config.set('editor.softWrap', softWrap)
+        # restore default when leaving zen mode
         @unSetSoftWrap = true
-      if editor.isSoftWrapped() is false
-        editor.setSoftWrapped true
-        # and remember to set is back later
+      if editor.isSoftWrapped() isnt softWrap
+        editor.setSoftWrapped softWrap
+        # restore default when leaving zen mode
         @unSoftWrap = true
 
       # Set width
@@ -100,17 +106,22 @@ module.exports =
       # Leave fullscreen
       atom.setFullScreen false if fullscreen
 
-      # Disable soft wrap if it was disabled when we zen'd
+      # Restore previous soft wrap setting when leaving zen mode
       if @unSoftWrap
-        editor.setSoftWrapped false
+        editor.setSoftWrapped (not softWrap)
         @unSoftWrap = null
 
-      # Reset the config for softwrap if it was enabled when we zen'd
+      # Reset the config for softwrap when leaving zen mode
       if @unSetSoftWrap
-        atom.config.set('editor.softWrap', false)
+        atom.config.set('editor.softWrap', (not softWrap))
 
       # Unset the width
       $('atom-text-editor:not(.mini)').css 'width', ''
+
+      # Hack to fix #55 - scrollbars on statusbar after exiting Zen
+      $('.status-bar-right').css 'overflow', 'hidden'
+      requestAnimationFrame ->
+        $('.status-bar-right').css 'overflow', ''
 
       # Restore TreeView
       if @restoreTree

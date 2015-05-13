@@ -23,7 +23,7 @@
     visibility: hidden;
   }
   .status-bar {
-    display: none;
+    height: 0;
   }
 
   ::shadow {
@@ -51,17 +51,30 @@
       color: @syntax-text-color;
     }
   }
-
-  &[data-zen-tabs="visible"] {
+  &[data-zen-word-count="visible"] {
+    .status-bar .word-count {
+      position: fixed;
+      bottom: @component-padding;
+      right: @component-padding;
+      padding: 0 @component-padding;
+      background: @syntax-background-color;
+      color: @syntax-text-color;
+    }
+  }
+  &[data-zen-tabs="multiple"],
+  &[data-zen-tabs="single"] {
     .tab-bar {
       display: flex;
       justify-content: center;
+    }
+  }
+  &[data-zen-tabs="single"] {
+    .tab-bar {
       .tab {
         display: none;
       }
       .active {
         display: block;
-        width: 100%;
       }
     }
   }
