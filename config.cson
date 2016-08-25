@@ -1,15 +1,23 @@
 "*":
-  "exception-reporting":
-    userId: "f8d26d07-0776-96b3-b4f7-759702ab07d4"
-  welcome:
-    showOnStartup: false
-  core: {}
+  Zen: {}
+  core:
+    themes: [
+      "one-dark-ui"
+      "base16-tomorrow-dark-theme"
+    ]
   editor:
+    fontFamily: "Luxi Mono"
+    fontSize: 16
     invisibles: {}
-    fontSize: 19
+    lineHeight: 1.7
     showIndentGuide: true
     showInvisibles: true
     softWrap: true
   emmet: {}
+  "exception-reporting":
+    userId: "f8d26d07-0776-96b3-b4f7-759702ab07d4"
+  tabs:
+    usePreviewTabs: true
   "travis-ci-status": {}
-  Zen: {}
+  welcome:
+    showOnStartup: false

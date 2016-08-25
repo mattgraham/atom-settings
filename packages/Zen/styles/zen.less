@@ -5,12 +5,16 @@
   atom-pane-container atom-pane .item-views {
     background: @syntax-background-color !important;
   }
+  atom-pane-container atom-pane {
+    border: none !important;
+  }
   atom-text-editor:not(.mini) {
     margin: 0 auto;
     max-width: 100%;
   }
   atom-workspace {
     padding: 0;
+    border: none !important;
   }
   atom-workspace atom-panel-container.left:empty {
     padding: 0;
@@ -19,16 +23,13 @@
   .tab-bar {
     display: none;
   }
-  .wrap-guide {
-    visibility: hidden;
-  }
   .status-bar {
     height: 0;
   }
 
   ::shadow {
-    .gutter {
-      display: none;
+    .wrap-guide {
+      visibility: hidden;
     }
     .editor--private {
       .vertical-scrollbar {
@@ -51,16 +52,21 @@
       color: @syntax-text-color;
     }
   }
-  &[data-zen-word-count="visible"] {
+  &[data-zen-word-count-position="left"] {
     .status-bar .word-count {
-      position: fixed;
-      bottom: @component-padding;
-      right: @component-padding;
-      padding: 0 @component-padding;
-      background: @syntax-background-color;
-      color: @syntax-text-color;
+      right: auto;
+      left: @component-padding;
     }
   }
+
+  &[data-zen-gutter="false"] {
+    ::shadow {
+       .gutter {
+         display: none;
+       }
+    }
+  }
+
   &[data-zen-tabs="multiple"],
   &[data-zen-tabs="single"] {
     .tab-bar {

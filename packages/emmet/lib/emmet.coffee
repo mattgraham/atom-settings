@@ -17,6 +17,9 @@ singleSelectionActions = [
 
 toggleCommentSyntaxes = ['html', 'css', 'less', 'scss']
 
+for k, v of  atom.config.get 'emmet.stylus'
+    emmet.preferences.set('stylus.' + k, v);
+
 getUserHome = () ->
   if process.platform is 'win32'
     return process.env.USERPROFILE
@@ -77,12 +80,12 @@ runAction = (action, evt) ->
         se.destroy()
       else
         return evt.abortKeyBinding()
-  
-  if action is 'toggle_comment' and toggleCommentSyntaxes.indexOf(syntax) is -1
+
+  if action is 'toggle_comment' and (toggleCommentSyntaxes.indexOf(syntax) is -1 or not atom.config.get 'emmet.useEmmetComments')
     return evt.abortKeyBinding()
 
   if action is 'insert_formatted_line_break_only'
-    if syntax isnt 'html' or not atom.config.get 'emmet.formatLineBreaks'
+    if not atom.config.get 'emmet.formatLineBreaks'
       return evt.abortKeyBinding()
 
     result = emmet.run action, editorProxy
@@ -129,6 +132,10 @@ module.exports =
     formatLineBreaks:
       type: 'boolean'
       default: true
+    useEmmetComments:
+      type: 'boolean'
+      default: false
+      description: 'disable to use atom native commenting system'
 
   activate: (@state) ->
     @subscriptions = new CompositeDisposable
