@@ -5,19 +5,21 @@
 #
 # You can create a new snippet in this file by typing "snip" and then hitting
 # tab.
-#
-# An example CoffeeScript snippet to expand log to console.log:
-#
-# '.source.coffee':
-#   'Console log':
-#     'prefix': 'log'
-#     'body': 'console.log $1'
-#
-# This file uses CoffeeScript Object Notation (CSON).
-# If you are unfamiliar with CSON, you can read more about it here:
-# https://github.com/bevry/cson#what-is-cson
 
 '*':
+  'ellipsis':
+    'prefix': 'lips'
+    'body': '  width: 250px;\nwhite-space: nowrap;\noverflow: hidden;\ntext-overflow: ellipsis;\n'
+
+  'External Link':
+    'prefix': 'ex'
+    'body': '{{#external-link url=""  class="link purple" }}LINK{{/external-link}}'
+
+  'External Link':
+    'prefix': 'malibu'
+    'body': '{{malibu-icon name="element-28" size="28" iconClass="malibu-fill-gradient-purple"}}'
+
+'.onsong .chordpro':
   'Onsong Setup':
     'prefix': 'onsong'
     'body': 'Title: \nArtist: \nKey: []\nOriginal Key: \nCANT Key: \nBook: \n\n'
@@ -29,10 +31,6 @@
   'Artist':
     'prefix': 'a'
     'body': 'Artist: '
-
-  'ellipsis':
-    'prefix': 'lips'
-    'body': '  width: 250px;\nwhite-space: nowrap;\noverflow: hidden;\ntext-overflow: ellipsis;\n'
 
 '.html .php .asp .scss .css':
   'Font Smoothing':

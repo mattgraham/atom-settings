@@ -1,15 +1,18 @@
 "*":
-  Zen: {}
+  Zen:
+    softWrap: false
+    typewriter: true
   core:
+    telemetryConsent: "no"
     themes: [
       "one-dark-ui"
       "base16-tomorrow-dark-theme"
     ]
   editor:
     fontFamily: "Luxi Mono"
-    fontSize: 16
     invisibles: {}
     lineHeight: 1.7
+    scrollPastEnd: true
     showIndentGuide: true
     showInvisibles: true
     softWrap: true
@@ -19,5 +22,15 @@
   tabs:
     usePreviewTabs: true
   "travis-ci-status": {}
+  "tree-view":
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
+"auto-detect-indentation":
+  indentationTypes: [
+    {
+      name: "Best Indent"
+      softTabs: true
+      tabLength: 16
+    }
+  ]

@@ -54,8 +54,14 @@ module.exports =
 
   toggle: ->
 
+    if ! atom.workspace.getActiveTextEditor()
+      # Prevent zen mode for undefined editors, e.g. settings
+      atom.notifications.addInfo 'Zen cannot be achieved in this view.'
+      return
+
     body = document.querySelector('body')
-    editor = atom.workspace.getActiveTextEditor()
+    editor =  atom.workspace.getActiveTextEditor()
+    editorElm =  atom.workspace.getActiveTextEditor().element
 
     # should really check current fullsceen state
     fullscreen = atom.config.get 'Zen.fullscreen'
@@ -64,15 +70,9 @@ module.exports =
     minimap = atom.config.get 'Zen.minimap'
 
     # Left panel needed for hide/restore
-    panels = atom.workspace.getLeftPanels()
-    panel = panels[0]
+    panel = atom.workspace.getLeftDock()
 
     if body.getAttribute('data-zen') isnt 'true'
-
-      # Prevent zen mode for undefined editors
-      if editor is undefined # e.g. settings-view
-        atom.notifications.addInfo 'Zen cannot be achieved in this view.'
-        return
 
       if atom.config.get 'Zen.tabs'
         body.setAttribute 'data-zen-tabs', atom.config.get 'Zen.tabs'
@@ -122,7 +122,7 @@ module.exports =
         @lineChanged = editor.onDidChangeCursorPosition ->
           halfScreen = Math.floor(editor.getRowsPerPage() / 2)
           cursor = editor.getCursorScreenPosition()
-          editor.setScrollTop(editor.getLineHeightInPixels() * (cursor.row - halfScreen))
+          editorElm.setScrollTop(editor.getLineHeightInPixels() * (cursor.row - halfScreen))
 
       @typewriterConfig = atom.config.observe 'Zen.typewriter', =>
         if not atom.config.get 'Zen.typewriter'
@@ -141,7 +141,7 @@ module.exports =
           @lineChanged = editor.onDidChangeCursorPosition ->
             halfScreen = Math.floor(editor.getRowsPerPage() / 2)
             cursor = editor.getCursorScreenPosition()
-            editor.setScrollTop editor.getLineHeightInPixels() * (cursor.row - halfScreen)
+            editorElm.setScrollTop editor.getLineHeightInPixels() * (cursor.row - halfScreen)
 
       # Hide TreeView
       if $('.nuclide-file-tree').length

@@ -1,0 +1,289 @@
+<button {{action "toggleModal"}} class="ma3">Toggle Simple Modal</button>
+
+{{#if isShowingModal}}
+  {{#hk-modal closeAction=(action "toggleModal") primaryAction=(action 'alertHello') as |modal|}}
+    {{#modal.header}}Modal Title{{/modal.header}}
+    {{#modal.body}}
+      <div class="pa2">
+        <div class="pv2">
+          The primaryAction above propogates down to the primaryButton. This button is special, in that it can be submitted by pressing the enter key while on any non-textfield field.
+        </div>
+        <div class="pv2">
+          The closeAction above propogates down to the closeButton. This is also used when clicking behind the modal or clicing on the x.
+        </div>
+      </div>
+    {{/modal.body}}
+    {{#modal.footer as |footer|}}
+      {{footer.closeButton}}
+      {{#footer.primaryButton}}Say Hello{{/footer.primaryButton}}
+    {{/modal.footer}}
+  {{/hk-modal}}
+{{/if}}
+
+
+<button {{action "toggleKitchenSinkModal"}} class="ma3">Toggle Kitchen Sink Modal</button>
+
+{{#if isShowingKitchenSinkModal}}
+  {{#hk-modal
+    closeAction=(action "toggleKitchenSinkModal")
+    clickOverlayToClose=false
+    containerClass='kitchen-sink-class'
+    as |modal|}}
+
+    {{#modal.header}}Modal Title{{/modal.header}}
+    {{#modal.body}}
+      MODAL BODY
+    {{/modal.body}}
+    {{#modal.footer as |footer|}}
+      {{#footer.closeButton additionalClassNames="lol" buttonType='danger'}}Stop Doing The Thing{{/footer.closeButton}}
+      {{footer.closeButton}}
+      {{#footer.button buttonAction=(action "alertHello") additionalClassNames="lol"}}Do The Thing{{/footer.button}}
+      {{#footer.button buttonAction=(action "alertHello") buttonType='primary' additionalClassNames="lol"}}Do The Other Thing{{/footer.button}}
+      {{#footer.button buttonAction=(action "alertHello") buttonType='secondary' additionalClassNames="lol"}}Do The Other Other Thing{{/footer.button}}
+    {{/modal.footer}}
+  {{/hk-modal}}
+{{/if}}
+
+
+<button {{action "toggleLegacyModal"}} class="ma3">Toggle Modal (Legacy Code Interface)</button>
+
+{{#if isShowingLegacyModal}}
+  {{#hk-modal-legacy
+             close=(action "toggleLegacyModal")
+             clickOverlayToClose=false
+             title="Provision Addon"
+             hasCancelButton=false
+             primaryAction=(action "alertHello")
+             primaryActionTitle="Say Hello"
+             primaryActionTitlePending="Provisioning..."
+             primaryActionDisabled=attachment.addon.isNotValid
+             containerClass="legacy-modal-class"}}
+             MODAL BODY
+  {{/hk-modal-legacy}}
+{{/if}}
+
+
+<div class="flex flex-column">
+  <div class="bg-light-silver pa3 w-100">
+    <div class="center mw9 flex items-center">
+
+      <div class="mr2">
+        {{malibu-icon name="element-28" size="28" iconClass="h2 w2 malibu-fill-gradient-purple v-mid"}}
+      </div>
+
+      <div class="purple f4">
+        Add-ons
+      </div>
+
+      <div class="mh2">
+        {{malibu-icon name="nav-forward-16" size="16" iconClass="h1 w1 fill-gray v-mid"}}
+      </div>
+
+      <div class="mr2">
+        {{malibu-icon name="app-28" size="28" iconClass="h2 w2 malibu-fill-gradient-purple v-mid"}}
+      </div>
+
+      <div class="dark-gray f4">
+        Splash SMS <span class="dib lh-copy f6 br-pill ph2 white b bg-orange ttu v-top ml2">Beta</span>
+      </div>
+    </div>
+  </div>
+  <!-- Sub-nav -->
+  <div class="bg-white w-100 bt bb b--silver">
+    <div class="center mw9">
+      <div class="hk-tabs b--white w-100">
+        <a href="#" class="hk-tabs__tab bb b--white">Overview</a>
+        <a href="#" class="hk-tabs__tab bb b--white">Add-on Settings</a>
+        <a href="#" class="hk-tabs__tab bb b--white">Marketplace Listing</a>
+        <a href="#" class="hk-tabs__tab--active bb b--white">Features &amp; Plans</a>
+        <a href="#" class="hk-tabs__tab bb b--white">Company Info</a>
+        <a href="#" class="hk-tabs__tab bb b--white">Metrics</a>
+        <div class="spacer flex-auto"></div>
+        </div>
+      </div>
+  </div>
+
+  <div class="w-100 flex-auto pv4">
+    <div class="center mw9 flex-ns">
+
+      <div class="w-100 w-25-ns pa3">
+        <div class="f3 purple">Features</div>
+        <p class="f5 lh-copy gray">@@Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+      </div>
+
+      <div class="w-100 w-75-ns pa3 pl6-ns">
+        <div class="dt w-100 f5">
+          <div class="dt-row">
+            <div class="pl3 dtc f6 pv3 b bb b--light-silver dark-gray f5">Feature</div>
+            <div class="dtc f6 pv3 b bb b--light-silver dark-gray f5">Type</div>
+            <div class="dtc f6 pv3 b bb b--light-silver dark-gray f5"></div>
+          </div>
+          <div class="dt-row hover-bg-lightest-light-gray">
+            <div class="pl3 dtc pv3 bb b--light-silver">Row Limit</div>
+            <div class="dtc pv3 gray bb b--light-silver">Number</div>
+            <div class="dtc pv3 gray bb b--light-silver tr pr3">
+              {{malibu-icon name="edit-16" size="16" iconClass="h1 w1 malibu-fill-gradient-purple v-mid"}}
+            </div>
+          </div>
+          <div class="dt-row hover-bg-lightest-light-gray">
+            <div class="pl3 dtc pv3 bb b--light-silver">Storage Capacity</div>
+            <div class="dtc pv3 gray bb b--light-silver">Filesize</div>
+            <div class="dtc pv3 gray bb b--light-silver tr pr3">
+              {{malibu-icon name="edit-16" size="16" iconClass="h1 w1 malibu-fill-gradient-purple v-mid"}}
+            </div>
+          </div>
+          <div class="dt-row hover-bg-lightest-light-gray">
+            <div class="pl3 dtc pv3 bb b--light-silver">Database Followers</div>
+            <div class="dtc pv3 gray bb b--light-silver">Boolean</div>
+            <div class="dtc pv3 gray bb b--light-silver tr pr3">
+              {{malibu-icon name="edit-16" size="16" iconClass="h1 w1 malibu-fill-gradient-purple v-mid"}}
+            </div>
+          </div>
+        </div>
+
+        <div class="tr mv3">
+          <button type="button" class="hk-button--primary" name="button">Add Feature</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dib w-100 pv3">
+    <div class="center mw9 bt b--light-silver pt5 flex-ns">
+      <div class="w-100 w-25-ns pa3">
+        <div class="f3 purple">Enabled Plans</div>
+        <p class="f5 mw6 lh-copy gray">@@Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+      </div>
+
+      <div class="w-100 w-75-ns pa3 pl6-ns">
+        <div class="dt w-100 f5">
+          <div class="dt-row">
+            <div class="dtc f6 pv3 b bb b--light-silver dark-gray f5">Name</div>
+            <div class="dtc f6 pv3 b bb b--light-silver dark-gray f5">Price/mo</div>
+            <div class="dtc f6 pv3 b bb b--light-silver dark-gray f5">Installable by</div>
+            <div class="dtc f6 pv3 b bb b--light-silver dark-gray f5">Visible to</div>
+            <div class="dtc f6 pv3 b bb b--light-silver dark-gray f5"></div>
+          </div>
+          <div class="dt-row hover-bg-lightest-light-gray">
+            <div class="dtc pv3 bb b--light-silver">Hobby Dev</div>
+            <div class="dtc pv3 gray bb b--light-silver">Free</div>
+            <div class="dtc pv3 gray bb b--light-silver">All</div>
+            <div class="dtc pv3 gray bb b--light-silver">All</div>
+            <div class="dtc pv3 gray bb b--light-silver tr pr3">
+              {{malibu-icon name="edit-16" size="16" iconClass="h1 w1 malibu-fill-gradient-purple v-mid"}}
+            </div>
+          </div>
+          <div class="dt-row hover-bg-lightest-light-gray">
+            <div class="dtc pv3 bb b--light-silver">Hobby Basic</div>
+            <div class="dtc pv3 gray bb b--light-silver">$9.00</div>
+            <div class="dtc pv3 gray bb b--light-silver">All</div>
+            <div class="dtc pv3 gray bb b--light-silver">All</div>
+            <div class="dtc pv3 gray bb b--light-silver tr pr3">
+              {{malibu-icon name="edit-16" size="16" iconClass="h1 w1 malibu-fill-gradient-purple v-mid"}}
+            </div>
+          </div>
+
+          <div class="dt-row hover-bg-lightest-light-gray">
+            <div class="dtc pv3 bb b--light-silver">Standard 0</div>
+            <div class="dtc pv3 gray bb b--light-silver">$50.00</div>
+            <div class="dtc pv3 gray bb b--light-silver">All</div>
+            <div class="dtc pv3 gray bb b--light-silver">All</div>
+            <div class="dtc pv3 gray bb b--light-silver tr pr3">
+              {{malibu-icon name="edit-16" size="16" iconClass="h1 w1 malibu-fill-gradient-purple v-mid"}}
+            </div>
+          </div>
+
+          <div class="dt-row hover-bg-lightest-light-gray">
+            <div class="dtc pv3 bb b--light-silver">Premium 0</div>
+            <div class="dtc pv3 gray bb b--light-silver">$200.00</div>
+            <div class="dtc pv3 gray bb b--light-silver">All</div>
+            <div class="dtc pv3 gray bb b--light-silver">All</div>
+            <div class="dtc pv3 gray bb b--light-silver tr pr3">
+              {{malibu-icon name="edit-16" size="16" iconClass="h1 w1 malibu-fill-gradient-purple v-mid"}}
+            </div>
+          </div>
+
+          <div class="dt-row hover-bg-lightest-light-gray">
+            <div class="dtc pv3 bb b--light-silver">Standard 2</div>
+            <div class="dtc pv3 gray bb b--light-silver">$300.00</div>
+            <div class="dtc pv3 gray bb b--light-silver">All</div>
+            <div class="dtc pv3 gray bb b--light-silver">All</div>
+            <div class="dtc pv3 gray bb b--light-silver tr pr3">
+              {{malibu-icon name="edit-16" size="16" iconClass="h1 w1 malibu-fill-gradient-purple v-mid"}}
+            </div>
+          </div>
+
+          <div class="dt-row hover-bg-lightest-light-gray">
+            <div class="dtc pv3 bb b--light-silver">Premium 2</div>
+            <div class="dtc pv3 gray bb b--light-silver">$350.00</div>
+            <div class="dtc pv3 gray bb b--light-silver">All</div>
+            <div class="dtc pv3 gray bb b--light-silver">All</div>
+            <div class="dtc pv3 gray bb b--light-silver tr pr3">
+              {{malibu-icon name="edit-16" size="16" iconClass="h1 w1 malibu-fill-gradient-purple v-mid"}}
+            </div>
+          </div>
+        </div>
+
+        <div class="tr mv3">
+          <button type="button" class="hk-button--primary" name="button">Add Plan</button>
+        </div>
+
+        <div class="dtc f6 pv3 b dark-gray f5">Plan Default</div>
+        <select class="hk-input w-100 w-40-ns" name="">
+          <option value="">Hobby Dev</option>
+          <option value="">Hobby Basic</option>
+          <option value="">Standard 0</option>
+          <option value="">Premium 0</option>
+          <option value="">Standard 2</option>
+          <option value="">Premium 2</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="center mw9 bt b--light-silver mt5 pt5 flex-ns">
+      <div class="w-100 w-25-ns pa3">
+        <div class="f3 purple">Plan Passes</div>
+        <p class="f5 mw6 lh-copy gray">@@Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+      </div>
+      <div class="w-100 w-75-ns pa3 pl6-ns">
+        <div class="dt w-100 f5">
+          <div class="dt-row">
+            <div class="dtc f6 pv3 b bb b--light-silver dark-gray f5">Name</div>
+            <div class="dtc f6 pv3 b bb b--light-silver dark-gray f5">Plan</div>
+            <div class="dtc f6 pv3 b bb b--light-silver dark-gray f5"></div>
+          </div>
+
+          <div class="dt-row hover-bg-lightest-light-gray">
+            <div class="dtc pv3 bb b--light-silver">amy@heroku.com</div>
+            <div class="dtc pv3 gray bb b--light-silver">Premium 9</div>
+            <div class="dtc pv3 gray bb b--light-silver tr pr3">
+              {{malibu-icon name="edit-16" size="16" iconClass="h1 w1 malibu-fill-gradient-purple v-mid"}}
+            </div>
+          </div>
+          <div class="dt-row hover-bg-lightest-light-gray">
+            <div class="dtc pv3 bb b--light-silver">jeff@heroku.com</div>
+            <div class="dtc pv3 gray bb b--light-silver">Premium 10</div>
+            <div class="dtc pv3 gray bb b--light-silver tr pr3">
+              {{malibu-icon name="edit-16" size="16" iconClass="h1 w1 malibu-fill-gradient-purple v-mid"}}
+            </div>
+          </div>
+          <div class="dt-row hover-bg-lightest-light-gray">
+            <div class="dtc pv3 bb b--light-silver">roberta@heroku.com</div>
+            <div class="dtc pv3 gray bb b--light-silver">Enterprise 1</div>
+            <div class="dtc pv3 gray bb b--light-silver tr pr3">
+              {{malibu-icon name="edit-16" size="16" iconClass="h1 w1 malibu-fill-gradient-purple v-mid"}}
+            </div>
+          </div>
+
+        </div>
+
+        <div class="tr mv3">
+          <button type="button" class="hk-button--primary" name="button">Add Pass</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{{outlet}}

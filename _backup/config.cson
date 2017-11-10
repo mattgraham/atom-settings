@@ -1,0 +1,20 @@
+"*":
+  "activate-power-mode":
+    autoToggle: false
+    comboMode:
+      enabled: false
+    screenShake:
+      enabled: false
+  core:
+    telemetryConsent: "limited"
+  editor:
+    fontFamily: "Operator Mono"
+    fontSize: 18
+    lineHeight: 1.47
+    showIndentGuide: true
+  emmet:
+    useEmmetComments: true
+  "exception-reporting":
+    userId: "dbaae0e5-7cd4-d8f7-e679-59ae5c2cbb94"
+  welcome:
+    showOnStartup: false

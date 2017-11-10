@@ -1,46 +1,80 @@
 {
-  "name": "Zen",
-  "main": "./lib/zen",
-  "version": "0.16.4",
-  "private": true,
-  "description": "Distraction free writing.",
+  "_args": [
+    [
+      {
+        "raw": "/private/var/folders/g9/fhb6k9p57cjfhjwvscj8gnx5x5t1ct/T/d-11751-71240-d1i1l8.p03u40a4i/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/private/var/folders/g9/fhb6k9p57cjfhjwvscj8gnx5x5t1ct/T/d-11751-71240-d1i1l8.p03u40a4i/package.tgz",
+        "spec": "/private/var/folders/g9/fhb6k9p57cjfhjwvscj8gnx5x5t1ct/T/d-11751-71240-d1i1l8.p03u40a4i/package.tgz",
+        "type": "local"
+      },
+      "/private/var/folders/g9/fhb6k9p57cjfhjwvscj8gnx5x5t1ct/T/apm-install-dir-11751-71240-h0b8xz.jeg1qkhuxr"
+    ]
+  ],
+  "_from": "../d-11751-71240-d1i1l8.p03u40a4i/package.tgz",
+  "_id": "Zen@0.18.0",
+  "_inCache": true,
+  "_location": "/Zen",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/private/var/folders/g9/fhb6k9p57cjfhjwvscj8gnx5x5t1ct/T/d-11751-71240-d1i1l8.p03u40a4i/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/private/var/folders/g9/fhb6k9p57cjfhjwvscj8gnx5x5t1ct/T/d-11751-71240-d1i1l8.p03u40a4i/package.tgz",
+    "spec": "/private/var/folders/g9/fhb6k9p57cjfhjwvscj8gnx5x5t1ct/T/d-11751-71240-d1i1l8.p03u40a4i/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-11751-71240-d1i1l8.p03u40a4i/package.tgz",
+  "_shasum": "f7d93d67444735d8e814994b77ddf646d606940d",
+  "_shrinkwrap": null,
+  "_spec": "/private/var/folders/g9/fhb6k9p57cjfhjwvscj8gnx5x5t1ct/T/d-11751-71240-d1i1l8.p03u40a4i/package.tgz",
+  "_where": "/private/var/folders/g9/fhb6k9p57cjfhjwvscj8gnx5x5t1ct/T/apm-install-dir-11751-71240-h0b8xz.jeg1qkhuxr",
   "activationCommands": {
     "atom-text-editor": [
       "zen:toggle"
     ]
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/defunkt/zen.git"
-  },
-  "license": "MIT",
-  "engines": {
-    "atom": ">=1.0.0 <2.0.0"
+  "bugs": {
+    "url": "https://github.com/defunkt/zen/issues"
   },
   "dependencies": {
     "jquery": "2.x.x"
   },
+  "description": "Distraction free writing.",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">=1.17.0 <2.0.0"
+  },
+  "homepage": "https://github.com/defunkt/zen#readme",
   "keywords": [
     "writing",
     "zen",
     "distraction free"
   ],
+  "license": "MIT",
+  "main": "./lib/zen",
+  "name": "Zen",
+  "optionalDependencies": {},
+  "private": true,
   "readme": "# Zen\n\nDistraction free writing for Atom.\n\nToggle with `cmd-ctrl-z` on OS X or by adding `shift` to your platform's\nfullscreen command:\n- `cmd-ctrl-shift-F` on OSX\n- `shift-F11` on Windows and Linux.\n\nSettings:\n- Width\n- Tabs can all be hidden, or all except the active tab\n- Optional soft wrap\n- Keep the [word count](https://atom.io/packages/wordcount) visible\n\nNote that settings are not available until the package has been activated, due to [a shortcoming in core](https://github.com/atom/settings-view/issues/356). Also, if you change themes, you might need to reload Atom for the colors to be applied correctly to all packages including Zen.\n\n## Before:\n\n![](https://f.cloud.github.com/assets/2/2290454/c7304340-a01d-11e3-8b89-018775a8612b.png)\n\n## After:\n\n![](https://f.cloud.github.com/assets/2/2290455/ce99e97e-a01d-11e3-8808-ebec40e959b4.png)\n",
   "readmeFilename": "README.md",
-  "bugs": {
-    "url": "https://github.com/defunkt/zen/issues"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/defunkt/zen.git"
   },
-  "homepage": "https://github.com/defunkt/zen#readme",
-  "_id": "Zen@0.16.4",
-  "_shasum": "8e4faa886b1afd8f9c5d87d12f1a579b630b6fad",
-  "_resolved": "file:../d-116416-48784-jnr2x7/package.tgz",
-  "_from": "../d-116416-48784-jnr2x7/package.tgz",
+  "version": "0.18.0",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [
       {
         "name": "jquery",
-        "version": "2.2.3",
+        "version": "2.2.4",
         "path": "node_modules/jquery/dist/jquery.js"
       }
     ],
@@ -56,10 +90,8 @@
       ".js": [
         "node_modules/jquery/dist/jquery.js",
         "node_modules/jquery/dist/jquery.min.js",
-        "node_modules/jquery/dist/jquery.slim.js",
-        "node_modules/jquery/dist/jquery.slim.min.js",
-        "node_modules/jquery/sizzle/dist/sizzle.js",
-        "node_modules/jquery/sizzle/dist/sizzle.min.js",
+        "node_modules/jquery/external/sizzle/dist/sizzle.js",
+        "node_modules/jquery/external/sizzle/dist/sizzle.min.js",
         "node_modules/jquery/src/ajax/jsonp.js",
         "node_modules/jquery/src/ajax/load.js",
         "node_modules/jquery/src/ajax/parseJSON.js",
@@ -77,12 +109,10 @@
         "node_modules/jquery/src/attributes/val.js",
         "node_modules/jquery/src/attributes.js",
         "node_modules/jquery/src/callbacks.js",
-        "node_modules/jquery/src/core/DOMEval.js",
         "node_modules/jquery/src/core/access.js",
         "node_modules/jquery/src/core/init.js",
         "node_modules/jquery/src/core/parseHTML.js",
         "node_modules/jquery/src/core/ready.js",
-        "node_modules/jquery/src/core/support.js",
         "node_modules/jquery/src/core/var/rsingleTag.js",
         "node_modules/jquery/src/core.js",
         "node_modules/jquery/src/css/addGetHookIf.js",
@@ -100,19 +130,15 @@
         "node_modules/jquery/src/css/var/swap.js",
         "node_modules/jquery/src/css.js",
         "node_modules/jquery/src/data/Data.js",
-        "node_modules/jquery/src/data/accepts.js",
-        "node_modules/jquery/src/data/support.js",
         "node_modules/jquery/src/data/var/acceptData.js",
         "node_modules/jquery/src/data/var/dataPriv.js",
         "node_modules/jquery/src/data/var/dataUser.js",
         "node_modules/jquery/src/data.js",
-        "node_modules/jquery/src/deferred/exceptionHook.js",
         "node_modules/jquery/src/deferred.js",
         "node_modules/jquery/src/deprecated.js",
         "node_modules/jquery/src/dimensions.js",
         "node_modules/jquery/src/effects/Tween.js",
         "node_modules/jquery/src/effects/animatedSelector.js",
-        "node_modules/jquery/src/effects/support.js",
         "node_modules/jquery/src/effects.js",
         "node_modules/jquery/src/event/ajax.js",
         "node_modules/jquery/src/event/alias.js",
@@ -126,13 +152,10 @@
         "node_modules/jquery/src/jquery.js",
         "node_modules/jquery/src/manipulation/_evalUrl.js",
         "node_modules/jquery/src/manipulation/buildFragment.js",
-        "node_modules/jquery/src/manipulation/createSafeFragment.js",
         "node_modules/jquery/src/manipulation/getAll.js",
         "node_modules/jquery/src/manipulation/setGlobalEval.js",
         "node_modules/jquery/src/manipulation/support.js",
-        "node_modules/jquery/src/manipulation/var/nodeNames.js",
         "node_modules/jquery/src/manipulation/var/rcheckableType.js",
-        "node_modules/jquery/src/manipulation/var/rleadingWhitespace.js",
         "node_modules/jquery/src/manipulation/var/rscriptType.js",
         "node_modules/jquery/src/manipulation/var/rtagName.js",
         "node_modules/jquery/src/manipulation/wrapMap.js",
@@ -145,7 +168,6 @@
         "node_modules/jquery/src/selector-sizzle.js",
         "node_modules/jquery/src/selector.js",
         "node_modules/jquery/src/serialize.js",
-        "node_modules/jquery/src/support.js",
         "node_modules/jquery/src/traversing/findFilter.js",
         "node_modules/jquery/src/traversing/var/dir.js",
         "node_modules/jquery/src/traversing/var/rneedsContext.js",
@@ -154,7 +176,6 @@
         "node_modules/jquery/src/var/arr.js",
         "node_modules/jquery/src/var/class2type.js",
         "node_modules/jquery/src/var/concat.js",
-        "node_modules/jquery/src/var/deletedIds.js",
         "node_modules/jquery/src/var/document.js",
         "node_modules/jquery/src/var/documentElement.js",
         "node_modules/jquery/src/var/hasOwn.js",
