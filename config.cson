@@ -4,10 +4,6 @@
     typewriter: true
   core:
     telemetryConsent: "no"
-    themes: [
-      "one-dark-ui"
-      "base16-tomorrow-dark-theme"
-    ]
   editor:
     fontFamily: "Luxi Mono"
     invisibles: {}
@@ -22,8 +18,7 @@
   tabs:
     usePreviewTabs: true
   "travis-ci-status": {}
-  "tree-view":
-    hideVcsIgnoredFiles: true
+  "tree-view": {}
   welcome:
     showOnStartup: false
 "auto-detect-indentation":

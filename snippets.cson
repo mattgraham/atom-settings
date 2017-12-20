@@ -19,24 +19,26 @@
     'prefix': 'malibu'
     'body': '{{malibu-icon name="element-28" size="28" iconClass="malibu-fill-gradient-purple"}}'
 
-'.onsong .chordpro':
+  'Font Smoothing':
+    'prefix': 'smooth'
+    'body': '-webkit-font-smoothing: antialiased;'
+
   'Onsong Setup':
     'prefix': 'onsong'
     'body': 'Title: \nArtist: \nKey: []\nOriginal Key: \nCANT Key: \nBook: \n\n'
 
-  'Title':
-    'prefix': 't'
-    'body': 'Title: '
+  'Bm':
+    'prefix': 'bm'
+    'body': '[Bm]'
 
-  'Artist':
-    'prefix': 'a'
-    'body': 'Artist: '
+  'Am':
+    'prefix': 'am'
+    'body': '[Am]'
 
-'.html .php .asp .scss .css':
-  'Font Smoothing':
-    'prefix': 'smooth'
-    'body': '-webkit-font-smoothing: antialiased;'
+  'F':
+    'prefix': 'f'
+    'body': '[F]'
 
-  'Font Smoothing':
-    'prefix': 'smooth'
-    'body': '-webkit-font-smoothing: antialiased;'
+  'G':
+    'prefix': 'g'
+    'body': '[G]'
